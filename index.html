@@ -2,91 +2,105 @@
 <html lang="th">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <title>Portfolio - ถกล แก่นนาคำ (ครูบาส)</title>
-  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;600;700;800&display=swap" rel="stylesheet">
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: 'Prompt', sans-serif;
-      background-color: #0b0f19;
-      color: #e2e8f0;
-      line-height: 1.6;
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:'Sarabun',sans-serif;background:#f0f4f8;color:#1e293b}
+    nav{background:#0f172a;padding:16px 32px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100}
+    nav .logo{color:#818cf8;font-size:20px;font-weight:800}
+    nav ul{display:flex;list-style:none;gap:24px}
+    nav ul li a{color:#94a3b8;text-decoration:none;font-size:14px;transition:color 0.2s}
+    nav ul li a:hover{color:white}
+    .hero{background:linear-gradient(135deg,#0f172a,#1e1b4b);color:white;text-align:center;padding:80px 20px}
+    .avatar{width:120px;height:120px;border-radius:50%;border:4px solid #6366f1;margin-bottom:20px;box-shadow:0 0 30px rgba(99,102,241,0.4);object-fit:cover}
+    .hero h1{font-size:36px;font-weight:800;margin-bottom:8px}
+    .hero .tagline{color:#818cf8;font-size:18px;margin-bottom:24px}
+    .hero-btns{display:flex;gap:12px;justify-content:center}
+    .btn-primary{padding:12px 24px;background:#6366f1;color:white;border-radius:8px;text-decoration:none;font-weight:700;transition:transform 0.2s}
+    .btn-primary:hover{transform:translateY(-2px)}
+    .container{max-width:800px;margin:0 auto;padding:40px 20px}
+    .section-title{font-size:24px;font-weight:800;color:#1e293b;margin-bottom:20px;padding-bottom:10px;border-bottom:2px solid #e2e8f0}
+    .about-text{font-size:16px;line-height:1.8;color:#475569}
+    .skills-wrap{display:flex;flex-wrap:wrap;gap:10px}
+    .skill-badge{background:#6366f1;color:white;padding:6px 16px;border-radius:99px;font-size:14px;font-weight:600}
+    .card-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+    .project-card{background:white;border-radius:12px;padding:20px;border:1px solid #e2e8f0;transition:transform 0.2s,box-shadow 0.2s}
+    .project-card:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(0,0,0,0.1)}
+    .project-card h3{color:#1e293b;margin-bottom:8px}
+    .project-card p{color:#64748b;font-size:14px}
+    footer{background:#0f172a;color:#64748b;text-align:center;padding:24px;font-size:14px}
+    @media (max-width: 600px) {
+      .card-grid { grid-template-columns: 1fr; }
     }
-    nav {
-      background: rgba(15, 23, 42, 0.85);
-      padding: 18px 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    }
-    nav .logo { font-size: 22px; font-weight: 700; color: #38bdf8; }
-    nav ul { display: flex; list-style: none; gap: 28px; }
-    nav ul li a { color: #94a3b8; text-decoration: none; font-size: 15px; }
-    nav ul li a:hover { color: #38bdf8; }
-    .hero {
-      padding: 80px 20px;
-      text-align: center;
-      background: radial-gradient(circle at top, #1e1b4b 0%, #0b0f19 70%);
-    }
-    .avatar {
-      width: 140px; height: 140px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid #38bdf8;
-      box-shadow: 0 0 25px rgba(56, 189, 248, 0.4);
-      margin-bottom: 20px;
-    }
-    .hero h1 { font-size: 36px; color: #fff; margin-bottom: 10px; }
-    .hero h1 span { color: #38bdf8; }
-    .hero p { color: #818cf8; font-size: 18px; }
-    .container { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
-    .card {
-      background: rgba(30, 41, 59, 0.6);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 16px;
-      padding: 24px;
-      margin-bottom: 24px;
-    }
-    .card h2 { color: #38bdf8; font-size: 20px; margin-bottom: 12px; }
-    footer { text-align: center; padding: 20px; color: #64748b; font-size: 14px; }
   </style>
 </head>
 <body>
-
   <nav>
-    <div class="logo">⚡ KBAS.DEV</div>
+    <div class="logo">🎓 KBAS</div>
     <ul>
       <li><a href="#about">เกี่ยวกับ</a></li>
+      <li><a href="#skills">ทักษะ</a></li>
       <li><a href="#projects">ผลงาน</a></li>
+      <li><a href="#contact">ติดต่อ</a></li>
     </ul>
   </nav>
 
   <section class="hero">
-    <img class="avatar" src="profile.JPG" alt="ถกล แก่นนาคำ">
-    <h1>สวัสดีครับ ผม <span>ถกล แก่นนาคำ</span> 👋</h1>
-    <p>นิสิตครูคอมพิวเตอร์ · EdTech Developer</p>
+    <img class="avatar" src="profile.JPG" alt="Profile">
+    <h1>สวัสดีครับ ผม ถกล แก่นนาคำ (บาส) 👋</h1>
+    <p class="tagline">นักศึกษาครูคอมพิวเตอร์ · Web & EdTech Developer</p>
+    <div class="hero-btns">
+      <a class="btn-primary" href="#projects">ดูผลงาน</a>
+    </div>
   </section>
 
   <div class="container">
-    <div class="card" id="about">
-      <h2>เกี่ยวกับฉัน</h2>
-      <p>นายถกล แก่นนาคำ (ครูบาส) นิสิตสาขาวิชาคอมพิวเตอร์ศึกษา มุ่งมั่นพัฒนาสื่อดิจิทัลและเว็บไซต์เพื่อการเรียนรู้</p>
-    </div>
+    <section id="about">
+      <h2 class="section-title">เกี่ยวกับฉัน</h2>
+      <p class="about-text">
+        สวัสดีครับ ผม นายถกล แก่นนาคำ (บาส) กำลังศึกษาอยู่ที่
+        มหาวิทยาลัยราชภัฏมหาสารคาม สาขาคอมพิวเตอร์ศึกษา ชั้นปีที่ 3
+        มีความสนใจด้านการพัฒนาเว็บไซต์ สื่อดิจิทัลเพื่อการเรียนรู้ และเทคโนโลยีทางการศึกษา
+      </p>
+    </section>
 
-    <div class="card" id="projects">
-      <h2>ผลงาน</h2>
-      <p>🌐 Web Portfolio Modern Dark Mode (HTML5/CSS3)</p>
-    </div>
+    <section id="skills" style="margin-top:40px">
+      <h2 class="section-title">ทักษะ</h2>
+      <div class="skills-wrap">
+        <span class="skill-badge">HTML5</span>
+        <span class="skill-badge">CSS3</span>
+        <span class="skill-badge">Flexbox</span>
+        <span class="skill-badge">XAMPP</span>
+        <span class="skill-badge">Digital Media & E-Book</span>
+        <span class="skill-badge">Computer Education</span>
+      </div>
+    </section>
+
+    <section id="projects" style="margin-top:40px">
+      <h2 class="section-title">ผลงาน</h2>
+      <div class="card-grid">
+        <div class="project-card">
+          <h3>🌐 Portfolio Website</h3>
+          <p>เว็บไซต์ Portfolio ส่วนตัว พัฒนาด้วย HTML5 & CSS แสดงข้อมูลและผลงาน</p>
+        </div>
+        <div class="project-card">
+          <h3>📚 Interactive E-Learning & Media</h3>
+          <p>การสร้างสื่อการสอนอิเล็กทรอนิกส์และสื่อดิจิทัลเพื่อส่งเสริมการเรียนรู้คอมพิวเตอร์พื้นฐาน</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" style="margin-top:40px">
+      <h2 class="section-title">ติดต่อฉัน</h2>
+      <p>📧 Email: <a href="mailto:kaennakham.05@gmail.com" style="color:#6366f1; text-decoration:none;">kaennakham.05@gmail.com</a></p>
+      <p style="margin-top:8px">📱 Line ID: -</p>
+    </section>
   </div>
 
   <footer>
-    <p>© 2026 Thakon Kaennakham (KruBas)</p>
+    <p>© 2026 ถกล แก่นนาคำ | สร้างด้วย ❤️ และ HTML/CSS</p>
   </footer>
-
 </body>
 </html>
